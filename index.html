@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estatística Descritiva</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <span>Estatística Descritiva</span>
+                </div>
+                <p class="header-description">
+                    Análise estatística com fórmulas detalhadas e gráficos interativos
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tabs">
+            <div class="tab active" data-section="variables">Tipos de Variáveis</div>
+            <div class="tab" data-section="frequency">Distribuição de Frequência</div>
+            <div class="tab" data-section="measures">Medidas Estatísticas</div>
+            <div class="tab" data-section="charts">Gráficos</div>
+            <div class="tab" data-section="csv">Análise de CSV</div>
+        </div>
+
+        <!-- Seção de Classificação de Variáveis -->
+        <section id="variables" class="section active">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>🔍</span>
+                        Tipos de Variáveis Estatísticas
+                    </h2>
+                    <p class="card-description">
+                        Aprenda a identificar e classificar diferentes tipos de variáveis
+                    </p>
+                </div>
+
+                <div class="variable-classification">
+                    <h4>📊 Como classificar variáveis</h4>
+                    
+                    <div class="classification-guide">
+                        <div class="guide-step">
+                            <h5>🤔 Primeiro: É qualidade ou quantidade?</h5>
+                            <div class="step-options">
+                                <div class="option">
+                                    <strong>Qualidade</strong> → Variável Qualitativa
+                                    <br><small>Características, atributos, categorias</small>
+                                </div>
+                                <div class="option">
+                                    <strong>Quantidade</strong> → Variável Quantitativa  
+                                    <br><small>Números, valores, medições</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <h5>🏷️ Se for Qualitativa:</h5>
+                            <div class="step-options">
+                                <div class="option qualitative-nominal">
+                                    <strong>🔵 Nominal:</strong> Sem ordem natural
+                                    <br><small>Exemplos: sexo, cor dos olhos, marca</small>
+                                </div>
+                                <div class="option qualitative-ordinal">
+                                    <strong>🟡 Ordinal:</strong> Com ordem definida
+                                    <br><small>Exemplos: escolaridade, conceito (A,B,C)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <h5>🔢 Se for Quantitativa:</h5>
+                            <div class="step-options">
+                                <div class="option quantitative-discrete">
+                                    <strong>🟢 Discreta:</strong> Números inteiros
+                                    <br><small>Exemplos: filhos, carros, pessoas</small>
+                                </div>
+                                <div class="option quantitative-continuous">
+                                    <strong>🟣 Contínua:</strong> Qualquer valor
+                                    <br><small>Exemplos: peso, altura, tempo</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="examples-section">
+                        <h4>💡 Exemplos práticos</h4>
+                        <div class="examples-grid">
+                            <div class="example-card qualitative-nominal">
+                                <h6>🔵 Qualitativa Nominal</h6>
+                                <ul>
+                                    <li>Gênero (M/F)</li>
+                                    <li>Estado civil</li>
+                                    <li>Cor dos olhos</li>
+                                    <li>Marca de carro</li>
+                                </ul>
+                            </div>
+                            <div class="example-card qualitative-ordinal">
+                                <h6>🟡 Qualitativa Ordinal</h6>
+                                <ul>
+                                    <li>Escolaridade</li>
+                                    <li>Classe social</li>
+                                    <li>Conceito (A,B,C,D)</li>
+                                    <li>Satisfação</li>
+                                </ul>
+                            </div>
+                            <div class="example-card quantitative-discrete">
+                                <h6>🟢 Quantitativa Discreta</h6>
+                                <ul>
+                                    <li>Número de filhos</li>
+                                    <li>Carros vendidos</li>
+                                    <li>Funcionários</li>
+                                    <li>Gols marcados</li>
+                                </ul>
+                            </div>
+                            <div class="example-card quantitative-continuous">
+                                <h6>🟣 Quantitativa Contínua</h6>
+                                <ul>
+                                    <li>Peso (kg)</li>
+                                    <li>Altura (m)</li>
+                                    <li>Temperatura (°C)</li>
+                                    <li>Salário (R$)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-section">
+                        <h4>💡 Dicas importantes</h4>
+                        <div class="tips-grid">
+                            <div class="tip">
+                                <strong>🔍 Para identificar:</strong>
+                                <p>Pergunte-se: "Posso fazer contas com essa variável?" Se sim, é quantitativa.</p>
+                            </div>
+                            <div class="tip">
+                                <strong>📊 Para ordenar:</strong>
+                                <p>Se é qualitativa, pergunte: "Existe uma ordem natural?" Se sim, é ordinal.</p>
+                            </div>
+                            <div class="tip">
+                                <strong>🔢 Para números:</strong>
+                                <p>Se é quantitativa, pergunte: "Só aceita valores inteiros?" Se sim, é discreta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Distribuição de Frequência -->
+        <section id="frequency" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>📈</span>
+                        Distribuição de Frequência
+                    </h2>
+                    <p class="card-description">
+                        Monte tabelas de frequência usando a regra de Sturges
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="dataInput">Digite os valores (separados por vírgula):</label>
+                    <textarea id="dataInput" rows="3" placeholder="Exemplo: 12, 15, 18, 20, 22, 24, 25, 28, 30, 32, 35, 36, 38, 40, 42, 43, 45, 46, 48, 50"></textarea>
+                </div>
+
+                <div class="toggle-container">
+                    <label class="toggle-label">
+                        <div class="toggle-switch active" id="freqStepsToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        Mostrar cálculos passo a passo
+                    </label>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary pulse" onclick="calculateFrequency()">
+                        Calcular
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearFrequency()">
+                        Limpar
+                    </button>
+                </div>
+
+                <div id="frequencyResults"></div>
+            </div>
+        </section>
+
+        <!-- Seção de Medidas -->
+        <section id="measures" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>🧮</span>
+                        Medidas Estatísticas
+                    </h2>
+                    <p class="card-description">
+                        Calcule média, mediana, moda, variância, desvio padrão e coeficiente de variação
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="measuresInput">Digite os valores (separados por vírgula):</label>
+                    <textarea id="measuresInput" rows="3" placeholder="Exemplo: 1.2, 1.5, 1.8, 2.0, 2.2, 2.2, 2.5, 2.8, 3.0, 3.5"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="populationType">Tipo de dados:</label>
+                    <select id="populationType">
+                        <option value="sample">Amostra (usar n-1 para variância)</option>
+                        <option value="population">População (usar n para variância)</option>
+                    </select>
+                    <small style="color: var(--secondary); display: block; margin-top: 0.5rem;">
+                        <strong>Amostra:</strong> Quando você tem apenas parte dos dados<br>
+                        <strong>População:</strong> Quando você tem todos os dados possíveis
+                    </small>
+                </div>
+
+                <div class="toggle-container">
+                    <label class="toggle-label">
+                        <div class="toggle-switch active" id="measuresStepsToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        Mostrar cálculos detalhados
+                    </label>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary pulse" onclick="calculateMeasures()">
+                        Calcular
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearMeasures()">
+                        Limpar
+                    </button>
+                </div>
+
+                <div id="measuresResults"></div>
+            </div>
+        </section>
+
+        <!-- Seção de Gráficos -->
+        <section id="charts" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>📊</span>
+                        Criação de Gráficos
+                    </h2>
+                    <p class="card-description">
+                        Crie diferentes tipos de gráficos para visualizar seus dados
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="chartDataInput">Digite os dados (formato: nome:valor):</label>
+                    <textarea id="chartDataInput" rows="3" placeholder="Exemplo: Janeiro:100, Fevereiro:150, Março:120, Abril:180, Maio:200, Junho:175"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="chartType">Tipo de Gráfico:</label>
+                    <select id="chartType">
+                        <option value="bar">Barras</option>
+                        <option value="pie">Pizza</option>
+                        <option value="line">Linha</option>
+                        <option value="doughnut">Rosca</option>
+                        <option value="polarArea">Polar</option>
+                        <option value="radar">Radar</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary pulse" onclick="createChart()">
+                        Criar Gráfico
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearChart()">
+                        Limpar
+                    </button>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="myChart" style="max-width: 800px; margin: 0 auto;"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de CSV -->
+        <section id="csv" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>📁</span>
+                        Análise de Arquivos CSV
+                    </h2>
+                    <p class="card-description">
+                        Carregue um arquivo CSV e veja as estatísticas automaticamente
+                    </p>
+                </div>
+
+                <div class="alert alert-info">
+                    <span class="alert-icon">💡</span>
+                    <span>O sistema vai analisar todas as colunas numéricas do seu arquivo</span>
+                </div>
+
+                <!-- Instruções de formato CSV -->
+                <div class="csv-format-info">
+                    <h4>📋 Como deve ser seu arquivo CSV</h4>
+                    <div class="format-example">
+                        <h5>Estrutura necessária:</h5>
+                        <div class="code-block">
+                            Nome,Idade,Altura,Peso<br>
+                            João,25,1.75,70<br>
+                            Maria,30,1.60,55<br>
+                            Pedro,22,1.80,85
+                        </div>
+                        <div class="format-rules">
+                            <h5>Regras importantes:</h5>
+                            <ul>
+                                <li>✅ Primeira linha com nomes das colunas</li>
+                                <li>✅ Use vírgula para separar os valores</li>
+                                <li>✅ Use ponto para números decimais</li>
+                                <li>✅ Não deixe células vazias</li>
+                                <li>❌ Evite caracteres especiais nos nomes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="file-input-wrapper">
+                    <label for="csvFile" class="file-input-label">
+                        📂 Escolher arquivo CSV
+                    </label>
+                    <input type="file" id="csvFile" accept=".csv" onchange="handleCSVUpload(event)">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary" onclick="clearCSV()">
+                        Limpar Dados
+                    </button>
+                </div>
+
+                <div id="csvResults"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chart.js com fallback aprimorado -->
+    <script>
+        // Função para carregar Chart.js com fallback
+        function loadChartJS() {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js';
+                script.onload = () => {
+                    if (typeof Chart !== 'undefined') {
+                        console.log('Chart.js carregado com sucesso!');
+                        resolve();
+                    } else {
+                        reject(new Error('Chart.js não foi carregado corretamente'));
+                    }
+                };
+                script.onerror = () => {
+                    console.warn('Erro ao carregar Chart.js do CDN principal. Tentando fonte alternativa...');
+                    // Tentar fonte alternativa
+                    const altScript = document.createElement('script');
+                    altScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js';
+                    altScript.onload = () => {
+                        if (typeof Chart !== 'undefined') {
+                            console.log('Chart.js carregado da fonte alternativa!');
+                            resolve();
+                        } else {
+                            reject(new Error('Chart.js não disponível em nenhuma fonte'));
+                        }
+                    };
+                    altScript.onerror = () => {
+                        console.error('Chart.js não pôde ser carregado de nenhuma fonte');
+                        reject(new Error('Chart.js não disponível'));
+                    };
+                    document.head.appendChild(altScript);
+                };
+                document.head.appendChild(script);
+            });
+        }
+
+        // Carregar Chart.js antes de inicializar a aplicação
+        loadChartJS().catch(() => {
+            console.warn('Funcionalidades de gráfico não estarão disponíveis');
+        });
+    </script>
+    
+    <!-- Scripts do sistema em ordem de dependência -->
+    <script src="scripts/statistics-calculator.js"></script>
+    <script src="scripts/ui-controller.js"></script>
+    <script src="scripts/frequency-analysis.js"></script>
+    <script src="scripts/measures-analysis.js"></script>
+    <script src="scripts/chart-manager.js"></script>
+    <script src="scripts/csv-analyzer.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 

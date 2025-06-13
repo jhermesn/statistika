@@ -1,0 +1,541 @@
+/* Responsive Design */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 2.2rem;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+
+    .header-content {
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .header-description {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .tab {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+        border-radius: 6px;
+    }
+
+    .card {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .card-header {
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    textarea {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .stat-card {
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+
+    .chart-container {
+        padding: 0.5rem;
+        overflow: hidden;
+    }
+
+    .step-container {
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+    }
+
+    .formula {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .file-input-label {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .csv-format-info {
+        margin: 1rem 0;
+    }
+
+    .format-example {
+        padding: 0.75rem;
+    }
+
+    .code-block {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    /* Responsividade para classificação de variáveis */
+    .step-options {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .examples-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .guide-step {
+        padding: 1rem;
+    }
+
+    .option {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .example-card {
+        padding: 0.75rem;
+    }
+
+    .tip {
+        padding: 0.75rem;
+    }
+
+    /* Gráficos CSV responsivos */
+    #csvCharts {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+
+    #csvCharts .chart-container {
+        height: 250px;
+        padding: 0.75rem;
+    }
+
+    #csvCharts .chart-container canvas {
+        max-height: 150px !important;
+        height: 150px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.8rem;
+    }
+    
+    .header-description {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+    
+    main {
+        padding: 1rem 0;
+    }
+    
+    .tabs {
+        margin-bottom: 1rem;
+        padding: 0 5px;
+    }
+    
+    .tab {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+    
+    .card {
+        border-radius: 12px;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-header {
+        padding-bottom: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-group {
+        gap: 0.5rem;
+    }
+    
+    .toggle-switch {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .toggle-slider {
+        width: 20px;
+        height: 20px;
+        top: 2.5px;
+        left: 2.5px;
+    }
+    
+    .toggle-switch.active .toggle-slider {
+        transform: translateX(25px);
+    }
+    
+    .toggle-label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group {
+        margin-bottom: 0.75rem;
+    }
+    
+    label {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    input, select, textarea {
+        padding: 0.6rem;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    
+    textarea {
+        min-height: 60px;
+    }
+    
+    .table-container {
+        margin: 1rem 0;
+        border-radius: 6px;
+    }
+    
+    table {
+        font-size: 0.8rem;
+        min-width: 400px;
+    }
+    
+    th, td {
+        padding: 0.5rem 0.3rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin: 1rem 0;
+    }
+    
+    .stat-card {
+        padding: 0.75rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+        margin: 0.3rem 0;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    .result-box {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+    
+    .result-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .step-container {
+        padding: 0.75rem;
+        margin: 0.75rem 0;
+    }
+    
+    .step-title {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .formula {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+        margin: 0.75rem 0;
+    }
+    
+    .chart-container {
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
+    
+    .chart-container canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .alert {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .alert-icon {
+        font-size: 1.5rem;
+    }
+    
+    .csv-format-info {
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
+    
+    .csv-format-info h4 {
+        font-size: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.25rem;
+    }
+    
+    .format-example h5 {
+        font-size: 0.9rem;
+    }
+    
+    .code-block {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+        line-height: 1.4;
+    }
+    
+    .format-rules li {
+        padding: 0.3rem 0;
+        font-size: 0.85rem;
+        flex-direction: column;
+        text-align: left;
+        gap: 0.2rem;
+    }
+    
+    .file-input-label {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .header-description {
+        font-size: 0.8rem;
+    }
+    
+    .tab {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .card {
+        padding: 0.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .grid {
+        gap: 0.5rem;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .table-container {
+        font-size: 0.7rem;
+    }
+    
+    table {
+        min-width: 300px;
+    }
+    
+    th, td {
+        padding: 0.4rem 0.2rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    header {
+        background: white !important;
+        color: black !important;
+        border-bottom: 2px solid #000;
+    }
+    
+    .tabs, .btn, .file-input-wrapper, .toggle-container {
+        display: none !important;
+    }
+    
+    .section {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+    
+    .card {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    .chart-container {
+        page-break-inside: avoid;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #4c1d95;
+        --primary-dark: #3c1361;
+        --border: #6b21a8;
+        --secondary: #374151;
+    }
+    
+    .card, .stat-card, .result-box, .step-container {
+        border: 2px solid var(--primary);
+    }
+    
+    .btn-primary {
+        background: var(--primary-dark);
+        border: 2px solid var(--primary);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .pulse {
+        animation: none;
+    }
+    
+    .tab:hover, .btn:hover, .stat-card:hover {
+        transform: none;
+    }
+} 
