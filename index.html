@@ -27,6 +27,8 @@
             <div class="tab active" data-section="variables">Tipos de Variáveis</div>
             <div class="tab" data-section="frequency">Distribuição de Frequência</div>
             <div class="tab" data-section="measures">Medidas Estatísticas</div>
+            <div class="tab" data-section="grouped">Dados Agrupados</div>
+            <div class="tab" data-section="analysis">Análises Específicas</div>
             <div class="tab" data-section="charts">Gráficos</div>
             <div class="tab" data-section="csv">Análise de CSV</div>
         </div>
@@ -246,6 +248,169 @@
             </div>
         </section>
 
+        <!-- Nova Seção: Dados Agrupados -->
+        <section id="grouped" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>📊</span>
+                        Análise de Dados Agrupados
+                    </h2>
+                    <p class="card-description">
+                        Analise dados já organizados em tabelas de frequência ou intervalos de classe
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="groupedDataType">Tipo de dados agrupados:</label>
+                    <select id="groupedDataType" onchange="toggleGroupedDataInput()">
+                        <option value="frequency">Tabela de Frequência (valor:frequência)</option>
+                        <option value="intervals">Intervalos de Classe</option>
+                    </select>
+                </div>
+
+                <div id="frequencyTableInput" class="form-group">
+                    <label for="frequencyData">Digite os dados no formato valor:frequência (uma linha por item):</label>
+                    <textarea id="frequencyData" rows="6" placeholder="Exemplo:
+0:3
+1:2
+2:2
+3:2
+4:1
+
+Ou separado por vírgula: 0:3, 1:2, 2:2, 3:2, 4:1"></textarea>
+                </div>
+
+                <div id="intervalsTableInput" class="form-group" style="display: none;">
+                    <label for="intervalsData">Digite os intervalos no formato limite_inferior-limite_superior:frequência:</label>
+                    <textarea id="intervalsData" rows="6" placeholder="Exemplo:
+15-30:4
+30-45:5
+45-60:6
+60-75:5
+
+Ou: 10|25:4, 25|40:10, 40|55:15, 55|70:19, 70|85:20"></textarea>
+                </div>
+
+                <div class="toggle-container">
+                    <label class="toggle-label">
+                        <div class="toggle-switch active" id="groupedStepsToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        Mostrar cálculos detalhados
+                    </label>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary pulse" onclick="calculateGroupedData()">
+                        Calcular
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearGroupedData()">
+                        Limpar
+                    </button>
+                </div>
+
+                <div id="groupedResults"></div>
+            </div>
+        </section>
+
+        <!-- Nova Seção: Análises Específicas -->
+        <section id="analysis" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span>🔍</span>
+                        Análises Específicas
+                    </h2>
+                    <p class="card-description">
+                        Ferramentas para análises percentuais, comparações e casos específicos
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="analysisType">Tipo de análise:</label>
+                    <select id="analysisType" onchange="toggleAnalysisInput()">
+                        <option value="percentages">Análises Percentuais</option>
+                        <option value="comparison">Comparação entre Grupos</option>
+                        <option value="specific">Consultas Específicas</option>
+                    </select>
+                </div>
+
+                <!-- Análises Percentuais -->
+                <div id="percentagesInput" class="form-group">
+                    <label for="percentageData">Digite os dados (separados por vírgula):</label>
+                    <textarea id="percentageData" rows="2" placeholder="12,15,18,20,22,24,25,28,30,32"></textarea>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label for="percentageCriteria">Critérios de consulta (um por linha):</label>
+                        <textarea id="percentageCriteria" rows="4" placeholder="< 25
+>= 20 AND < 30
+> 28
+= 22"></textarea>
+                        <small style="color: var(--secondary); display: block; margin-top: 0.5rem;">
+                            <strong>Operadores suportados:</strong> < (menor), > (maior), <= (menor ou igual), >= (maior ou igual), = (igual)<br>
+                            <strong>Combinar critérios:</strong> Use "AND" para combinar (ex: >= 20 AND < 30)
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Comparação entre Grupos -->
+                <div id="comparisonInput" class="form-group" style="display: none;">
+                    <label for="group1Data">Grupo 1:</label>
+                    <textarea id="group1Data" rows="2" placeholder="Dados do primeiro grupo: 1.8, 2.5, 1.5, 1.2, 1.0"></textarea>
+                    <label for="group2Data" style="margin-top: 1rem;">Grupo 2:</label>
+                    <textarea id="group2Data" rows="2" placeholder="Dados do segundo grupo: 1.6, 2.5, 1.2, 2.3, 1.5"></textarea>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label for="comparisonType">Tipo de comparação:</label>
+                        <select id="comparisonType">
+                            <option value="variability">Comparar Variabilidade (CV)</option>
+                            <option value="central">Comparar Tendência Central</option>
+                            <option value="complete">Análise Completa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Consultas Específicas -->
+                <div id="specificInput" class="form-group" style="display: none;">
+                    <label for="specificData">Digite os dados:</label>
+                    <textarea id="specificData" rows="2" placeholder="Dados: 12,15,18,20,22,24,25,28,30,32"></textarea>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label for="specificQuery">Consulta específica:</label>
+                        <select id="specificQuery">
+                            <option value="amplitude">Calcular Amplitude Total</option>
+                            <option value="outliers">Detectar Outliers</option>
+                            <option value="quartiles">Encontrar Quartis</option>
+                            <option value="percentile">Calcular Percentil Específico</option>
+                            <option value="distribution">Analisar Distribuição</option>
+                        </select>
+                    </div>
+                    <div id="percentileInput" class="form-group" style="display: none; margin-top: 1rem;">
+                        <label for="percentileValue">Percentil desejado (0-100):</label>
+                        <input type="number" id="percentileValue" min="0" max="100" placeholder="50">
+                    </div>
+                </div>
+
+                <div class="toggle-container">
+                    <label class="toggle-label">
+                        <div class="toggle-switch active" id="analysisStepsToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        Mostrar explicações detalhadas
+                    </label>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary pulse" onclick="calculateSpecificAnalysis()">
+                        Analisar
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearSpecificAnalysis()">
+                        Limpar
+                    </button>
+                </div>
+
+                <div id="analysisResults"></div>
+            </div>
+        </section>
+
         <!-- Seção de Gráficos -->
         <section id="charts" class="section">
             <div class="card">
@@ -393,6 +558,58 @@
         loadChartJS().catch(() => {
             console.warn('Funcionalidades de gráfico não estarão disponíveis');
         });
+
+        // Funções para alternar inputs
+        function toggleGroupedDataInput() {
+            const type = document.getElementById('groupedDataType').value;
+            const frequencyInput = document.getElementById('frequencyTableInput');
+            const intervalsInput = document.getElementById('intervalsTableInput');
+            
+            if (type === 'frequency') {
+                frequencyInput.style.display = 'block';
+                intervalsInput.style.display = 'none';
+            } else {
+                frequencyInput.style.display = 'none';
+                intervalsInput.style.display = 'block';
+            }
+        }
+
+        function toggleAnalysisInput() {
+            const type = document.getElementById('analysisType').value;
+            const percentagesInput = document.getElementById('percentagesInput');
+            const comparisonInput = document.getElementById('comparisonInput');
+            const specificInput = document.getElementById('specificInput');
+            
+            // Esconder todos
+            percentagesInput.style.display = 'none';
+            comparisonInput.style.display = 'none';
+            specificInput.style.display = 'none';
+            
+            // Mostrar o selecionado
+            if (type === 'percentages') {
+                percentagesInput.style.display = 'block';
+            } else if (type === 'comparison') {
+                comparisonInput.style.display = 'block';
+            } else if (type === 'specific') {
+                specificInput.style.display = 'block';
+            }
+        }
+
+        // Listener para mostrar/esconder input de percentil
+        document.addEventListener('DOMContentLoaded', function() {
+            const specificQuery = document.getElementById('specificQuery');
+            const percentileInput = document.getElementById('percentileInput');
+            
+            if (specificQuery) {
+                specificQuery.addEventListener('change', function() {
+                    if (this.value === 'percentile') {
+                        percentileInput.style.display = 'block';
+                    } else {
+                        percentileInput.style.display = 'none';
+                    }
+                });
+            }
+        });
     </script>
     
     <!-- Scripts do sistema em ordem de dependência -->
@@ -400,6 +617,8 @@
     <script src="scripts/ui-controller.js"></script>
     <script src="scripts/frequency-analysis.js"></script>
     <script src="scripts/measures-analysis.js"></script>
+    <script src="scripts/grouped-data-analysis.js"></script>
+    <script src="scripts/specific-analysis.js"></script>
     <script src="scripts/chart-manager.js"></script>
     <script src="scripts/csv-analyzer.js"></script>
     <script src="scripts/main.js"></script>

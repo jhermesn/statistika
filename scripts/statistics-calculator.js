@@ -314,6 +314,57 @@ class StatisticsCalculator {
     }
 
     /**
+     * Calcula percentil específico
+     * @param {number} p - Percentil desejado (0-100)
+     * @returns {number} Valor do percentil
+     */
+    calculatePercentile(p) {
+        if (p < 0 || p > 100) {
+            throw new Error('Percentil deve estar entre 0 e 100');
+        }
+        
+        const n = this.sortedData.length;
+        const index = (p / 100) * (n - 1);
+        const lower = Math.floor(index);
+        const upper = Math.ceil(index);
+        const weight = index % 1;
+        
+        if (upper >= n) return this.sortedData[n - 1];
+        if (lower < 0) return this.sortedData[0];
+        
+        return this.sortedData[lower] * (1 - weight) + this.sortedData[upper] * weight;
+    }
+
+    /**
+     * Calcula percentual de dados que atendem a uma condição
+     * @param {function} condition - Função que retorna true/false para cada valor
+     * @returns {Object} Contagem e percentual
+     */
+    calculateConditionalPercentage(condition) {
+        const count = this.data.filter(condition).length;
+        const percentage = (count / this.data.length) * 100;
+        
+        return {
+            count,
+            total: this.data.length,
+            percentage,
+            values: this.data.filter(condition)
+        };
+    }
+
+    /**
+     * Calcula múltiplas análises percentuais de uma vez
+     * @param {Array} conditions - Array de objetos {name, condition}
+     * @returns {Array} Resultados de cada condição
+     */
+    calculateMultiplePercentages(conditions) {
+        return conditions.map(({name, condition}) => ({
+            name,
+            ...this.calculateConditionalPercentage(condition)
+        }));
+    }
+
+    /**
      * Retorna todas as estatísticas descritivas
      * @param {boolean} isSample - Se true, usa fórmulas amostrais, se false, populacionais
      * @returns {Object} Objeto com todas as estatísticas

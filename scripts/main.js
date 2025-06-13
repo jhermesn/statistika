@@ -7,6 +7,8 @@
 window.uiController = null;
 window.frequencyAnalysis = null;
 window.measuresAnalysis = null;
+window.groupedAnalysis = null;
+window.specificAnalysis = null;
 window.chartManager = null;
 window.csvAnalyzer = null;
 
@@ -37,6 +39,8 @@ function initializeApplication() {
     // Inicializar módulos de análise
     window.frequencyAnalysis = new FrequencyAnalysis(window.uiController);
     window.measuresAnalysis = new MeasuresAnalysis(window.uiController);
+    window.groupedAnalysis = new GroupedDataAnalysis(window.uiController);
+    window.specificAnalysis = new SpecificAnalysis(window.uiController);
     window.chartManager = new ChartManager(window.uiController);
     window.csvAnalyzer = new CSVAnalyzer(window.uiController);
 
@@ -110,7 +114,7 @@ function addExportButtons() {
     }
 
     // Botões para exportar resultados das análises
-    ['frequency', 'measures'].forEach(sectionId => {
+    ['frequency', 'measures', 'grouped', 'analysis'].forEach(sectionId => {
         const section = document.getElementById(sectionId);
         const btnGroup = section?.querySelector('.btn-group');
         
@@ -133,7 +137,7 @@ function addExportButtons() {
  */
 function setupAutoSave() {
     // Salvar estado dos toggles
-    const toggles = ['freqStepsToggle', 'measuresStepsToggle'];
+    const toggles = ['freqStepsToggle', 'measuresStepsToggle', 'groupedStepsToggle', 'analysisStepsToggle'];
     
     toggles.forEach(toggleId => {
         const toggle = document.getElementById(toggleId);
@@ -381,9 +385,9 @@ function showCriticalError(message) {
  * Informações da aplicação
  */
 window.APP_INFO = {
-    version: '2.2.0',
-    modules: ['UIController', 'FrequencyAnalysis', 'MeasuresAnalysis', 'ChartManager', 'CSVAnalyzer']
+    version: '2.3.0',
+    modules: ['UIController', 'FrequencyAnalysis', 'MeasuresAnalysis', 'GroupedDataAnalysis', 'SpecificAnalysis', 'ChartManager', 'CSVAnalyzer']
 };
 
-console.log('📊 Sistema de Estatística Descritiva v2.2.0');
+console.log('📊 Sistema de Estatística Descritiva v2.3.0');
 console.log('🚀 Aplicação inicializada com sucesso!'); 

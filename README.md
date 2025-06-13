@@ -214,5 +214,5 @@ Projeto desenvolvido para fins educacionais.
 
 ---
 
-**Versão:** 2.2.0  
+**Versão:** 2.3.0  
 **Compatibilidade:** Chrome 60+, Firefox 55+, Safari 12+, Edge 79+ 
